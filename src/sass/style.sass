@@ -1,4 +1,12 @@
-$text_color: #FFFFFF
+$white_color: #FFFFFF
+$blue_color: #1EACC7
+$red_color: #FF5656
+
+@mixin btn_hover
+    &:hover
+        background-image: none
+        background-color: $blue_color
+    
     
 * 
     font-family: 'Roboto', sans-serif
@@ -23,7 +31,7 @@ nav
     .menu_link 
         font-weight: 300
         font-size: 15px
-        color: $text_color
+        color: $white_color
     .menu_item 
         border-right: 2px dotted red
         padding-right: 28px
@@ -42,11 +50,11 @@ nav
         &_officail 
             margin-top: 6px
             opacity: 0.5
-            color: $text_color
+            color: $white_color
             font-size: 13px
             font-weight: 400
         &_call 
-            color: $text_color
+            color: $white_color
             font-size: 12px
             font-weight: 300
             margin-top: 19px
@@ -54,7 +62,7 @@ nav
         &_phone 
             display: block
             margin-top: 8px
-            color: $text_color
+            color: $white_color
             font-size: 22px
             font-weight: 400
             text-transform: uppercase
@@ -64,7 +72,7 @@ nav
             margin-top: 19px
             width: 172px
             height: 46px
-            background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
+            background: linear-gradient(0deg, $blue_color 0%, #4CE2FF 100%)
             box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.12)
             border: none
             border-radius: 4px
@@ -72,8 +80,9 @@ nav
             font-size: 14px
             text-align: center
             text-transform: uppercase
-            color: $text_color
+            color: $white_color
             text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+            @include btn_hover
 
 .promo 
     min-height: 800px
@@ -81,7 +90,7 @@ nav
     padding: 150px 0 135px 0
     .promo
         &_header 
-            color: $text_color
+            color: $white_color
             font-weight: 700
             text-transform: uppercase
             font-size: 60px
@@ -89,7 +98,7 @@ nav
             text-align: center
         &_subheader 
             margin-top: 22px
-            color: $text_color
+            color: $white_color
             font-weight: 700
             text-transform: uppercase
             font-size: 36px
@@ -101,20 +110,21 @@ nav
             font-size: 18px
             line-height: 24px
             text-align: center
-            color: $text_color
+            color: $white_color
         &_btn 
             display: block
             margin: 118px auto 0 auto
             width: 259px
             height: 63px
-            background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
+            background: linear-gradient(0deg, $blue_color 0%, #4CE2FF 100%)
             box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12)
             border: none
             border-radius: 4px
-            color: $text_color
+            color: $white_color
             text-transform: uppercase
             font-weight: 400
             font-size: 18px
+            @include btn_hover
 
 .label
     width: 113px
@@ -123,11 +133,14 @@ nav
     font-weight: 400
     font-size: 11px
     line-height: 26px
-    color: $text_color
+    color: $white_color
     display: block
     margin: 0 auto
     text-align: center
     text-transform: uppercase
+    &.white
+        background-color: $white_color
+        color: #070716
 .title
     margin-top: 33px
     font-weight: 700
@@ -135,12 +148,16 @@ nav
     text-align: center
     text-transform: uppercase
     color: #222222
+    &.white
+        color: $white_color
 .subtitle
     margin-top: 19px
     font-weight: 400
     font-size: 17px
     text-align: center
     color: #222222
+    &.white
+        color: $white_color
 
 .reasons
     margin: 18px auto 64px auto
@@ -155,7 +172,7 @@ nav
         width: 116px
         height: 116px
         border-radius: 100%
-        background-color: #1EACC7
+        background-color: $blue_color
     &_descr
         width: 371px
         font-weight: 400
@@ -163,7 +180,7 @@ nav
         line-height: 21px
         color: #202020
         span
-            color: #1EACC7
+            color: $blue_color
 
 .mobile
     min-height: 864px
@@ -196,7 +213,7 @@ nav
             line-height: 31px
             text-align: center
             text-transform: uppercase
-            color: $text_color
+            color: $white_color
         &_plus
             display: flex
             justify-content: center
@@ -211,3 +228,58 @@ nav
             margin: 0 auto
             border-radius: 100%
             cursor: pointer
+            &::before
+                content: ''
+                display: block
+                width: 14px
+                height: 2px
+                background-color: $blue_color
+                transition: 0.3s all
+            &::after
+                content: ''
+                display: block
+                width: 2px
+                height: 14px
+                background-color: $blue_color
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                transition: 0.3s all
+            &:hover
+                &::before, &::after
+                    background-color: $red_color
+                    
+.select
+    padding-top: 59px
+    position: relative
+    &_bg
+        &_black
+            width: 100%
+            height: 502px
+            z-index: -1            
+            position: absolute
+            top: 0
+            background: #070716
+        &_white
+            width: 100%
+            height: 397px
+            z-index: -1
+            position: absolute
+            top: 502px
+            background: url('../img/bg/mobile_app.png') center center/cover no-repeat
+    img
+        display: block
+        margin: 0 auto
+    &_text
+        text-align: center
+
+.require
+    padding: 68px 0 84px 0
+    &_block
+        margin: 33px 0
+        &_nmb
+            margin-bottom: 0
+    &_title
+        font-weight: 400
+        font-size: 22px
+        color: #1CA8C3
