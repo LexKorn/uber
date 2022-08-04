@@ -283,3 +283,43 @@ nav
         font-weight: 400
         font-size: 22px
         color: #1CA8C3
+    &_list
+        margin-top: 22px
+        list-style-type: none
+        padding-left: 50px
+        li
+            position: relative
+            font-size: 17px
+            font-weight: 300
+            line-height: 24px
+            margin-bottom: 10px
+            &::before
+                content: ''
+                position: absolute
+                left: -32px
+                top: 3px
+                width: 21px
+                height: 20px
+                background: url('../icons/check_blue.svg') center center/cover no-repeat
+    &_red
+        .require_title
+            color: $red_color
+        .require_list
+            li
+                &::before
+                    background: url('../icons/check_red.svg') center center/cover no-repeat
+
+.world
+    padding-top: 46px
+    height: 717px
+    background: url('../img/bg/map.jpg') center center/cover no-repeat
+    position: relative
+    &_text
+        font-weight: 400
+        font-size: 15px
+        text-transform: uppercase
+        color: #1FBAD6
+        position: absolute
+        bottom: 22px
+        left: 50%
+        transform: translateX(-50%)
