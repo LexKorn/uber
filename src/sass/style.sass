@@ -22,6 +22,9 @@ nav
     background-color: #212121
     z-index: 2
 
+a
+    text-decoration: none
+
 .menu 
     display: flex
     justify-content: space-between
@@ -323,3 +326,49 @@ nav
         bottom: 22px
         left: 50%
         transform: translateX(-50%)
+
+footer
+    height: 134px
+    padding-right: 21px
+    padding-left: 23px
+    .wrapper
+        display: flex
+        justify-content: space-between
+        .cocial
+            display: flex
+            justify-content: space-around
+            margin-top: 49px
+            margin-left: 23px
+            &_item
+                width: 35px
+                height: 35px
+                border-radius: 100%
+                background-color:  #070716
+                color: $white_color
+                padding-left: 6px
+                display: flex
+                justify-content: center
+                align-items: center
+        .menu 
+            justify-content: center
+            padding: 24px 0 0 0
+            &_second
+                padding-top: 10px
+            .menu_link 
+                font-weight: 300
+                font-size: 15px
+                text-transform: uppercase
+                color: #070716
+                &_second
+                    font-size: 11px
+                    color: #999999
+            .menu_item 
+                border-right: none
+        .lang
+            display: block
+            font-weight: 400
+            font-size: 11px
+            text-transform: uppercase
+            text-align: center
+            color: #1FBAD6
+            padding-top: 18px
