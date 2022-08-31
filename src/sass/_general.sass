@@ -12,6 +12,9 @@ nav
 a
     text-decoration: none
 
+.hamburger
+    display: none
+
 .menu 
     display: flex
     justify-content: space-between
@@ -74,7 +77,9 @@ a
             text-transform: uppercase
             color: $white_color
             text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
-            @include btn_hover
+            @include btn_hover            
+        &_xs-visible
+            display: none
 
 .promo 
     min-height: 800px
@@ -262,7 +267,8 @@ a
             position: absolute
             top: 502px
             background: url('../img/bg/mobile_app.png') center center/cover no-repeat
-    img
+    &_img
+        position: relative
         display: block
         margin: 0 auto
     &_text
@@ -392,3 +398,4 @@ footer
             margin-top: 19px
             text-transform: uppercase
             text-align: center
+
